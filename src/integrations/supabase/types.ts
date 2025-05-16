@@ -9,13 +9,67 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      [_ in never]: never
+      links: {
+        Row: {
+          button_text: string
+          button_url: string
+          clicks: number
+          created_at: string
+          delay_seconds: number
+          destination_url: string
+          id: string
+          popup_text: string
+          position: string
+          short_id: string
+          views: number
+        }
+        Insert: {
+          button_text: string
+          button_url: string
+          clicks?: number
+          created_at?: string
+          delay_seconds: number
+          destination_url: string
+          id?: string
+          popup_text: string
+          position: string
+          short_id: string
+          views?: number
+        }
+        Update: {
+          button_text?: string
+          button_url?: string
+          clicks?: number
+          created_at?: string
+          delay_seconds?: number
+          destination_url?: string
+          id?: string
+          popup_text?: string
+          position?: string
+          short_id?: string
+          views?: number
+        }
+        Relationships: []
+      }
+      rityly: {
+        Row: {}
+        Insert: {}
+        Update: {}
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      increment_link_clicks: {
+        Args: { short_id: string }
+        Returns: undefined
+      }
+      increment_link_views: {
+        Args: { short_id: string }
+        Returns: undefined
+      }
     }
     Enums: {
       [_ in never]: never

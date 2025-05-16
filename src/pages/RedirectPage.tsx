@@ -84,6 +84,7 @@ const RedirectPage: React.FC = () => {
             buttonText={linkData.button_text}
             buttonUrl={linkData.button_url}
             position={linkData.position}
+            shortId={shortId}
             onClose={() => setShowPopup(false)}
           />
         </div>

@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { PopupPosition } from "@/types/popup";
+import { incrementLinkClicks } from "@/services/linkService";
 
 interface PopupOverlayProps {
   popupText: string;
@@ -11,6 +12,7 @@ interface PopupOverlayProps {
   buttonUrl: string;
   position: PopupPosition;
   onClose: () => void;
+  shortId?: string; // Make it optional since preview might not have it
 }
 
 const PopupOverlay: React.FC<PopupOverlayProps> = ({
@@ -19,6 +21,7 @@ const PopupOverlay: React.FC<PopupOverlayProps> = ({
   buttonUrl,
   position,
   onClose,
+  shortId,
 }) => {
   const getPositionClasses = () => {
     switch (position) {
@@ -39,6 +42,10 @@ const PopupOverlay: React.FC<PopupOverlayProps> = ({
 
   const handleButtonClick = () => {
     if (buttonUrl) {
+      // Track click if we have a shortId (not in preview mode)
+      if (shortId) {
+        incrementLinkClicks(shortId).catch(console.error);
+      }
       window.open(buttonUrl, "_blank");
     }
   };

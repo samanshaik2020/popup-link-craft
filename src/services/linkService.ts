@@ -1,14 +1,7 @@
 
-import { createClient } from "@supabase/supabase-js";
+import { supabase } from "@/integrations/supabase/client";
 import { LinkData } from "@/components/LinkForm";
 import { LinkRecord } from "@/types/popup";
-
-// These would come from environment variables in a production app
-const supabaseUrl = "https://your-project.supabase.co";
-const supabaseKey = "your-anon-key";
-
-// Initialize the Supabase client
-export const supabase = createClient(supabaseUrl, supabaseKey);
 
 function generateShortId() {
   // Generate a random string of 6 characters
@@ -45,7 +38,7 @@ export async function createLink(linkData: LinkData): Promise<string> {
     throw new Error("Failed to create link");
   }
 
-  // Generate the full URL for the frontend (window.location would be used in a real app)
+  // Generate the full URL for the frontend
   const baseUrl = window.location.origin;
   return `${baseUrl}/r/${shortId}`;
 }
