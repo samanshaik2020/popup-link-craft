@@ -2,13 +2,10 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import Header from "@/components/Header";
 
 const Index: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col">
-      <Header />
-      
+    <div>
       <main className="flex-1">
         {/* Hero Section */}
         <section className="bg-gradient-to-r from-violet-500 to-indigo-600 text-white py-20">

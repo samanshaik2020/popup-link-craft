@@ -21,7 +21,14 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Index />} />
+          <Route path="/" element={
+            <div className="min-h-screen flex flex-col">
+              <Header />
+              <div className="flex-1">
+                <Index />
+              </div>
+            </div>
+          } />
           <Route path="/create" element={
             <div className="min-h-screen flex flex-col">
               <Header />
@@ -47,4 +54,3 @@ const App = () => (
 );
 
 export default App;
-
