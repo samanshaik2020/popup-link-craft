@@ -1,0 +1,12 @@
+{
+  "auth": {
+    "site_url": "https://popiup.com",
+    "additional_redirect_urls": [
+      "http://localhost:5173",
+      "http://localhost:3000",
+      "https://popiup.com"
+    ],
+    "autoconfirm": false,
+    "enable_signup": true
+  }
+}

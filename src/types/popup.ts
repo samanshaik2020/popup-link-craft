@@ -3,14 +3,22 @@ export type PopupPosition = "top-left" | "top-right" | "bottom-left" | "bottom-r
 
 export interface LinkRecord {
   id: string;
-  short_id: string;
+  short_code: string;
   destination_url: string;
-  popup_text: string;
-  button_text: string;
+  popup_message: string;
+  button_label: string;
   button_url: string;
-  position: PopupPosition;
-  delay_seconds: number;
+  popup_position: PopupPosition;
+  popup_delay: number;
   created_at: string;
-  views: number;
+  last_accessed?: string;
   clicks: number;
+  button_clicks: number;
+  is_active: boolean;
+  image_url?: string;
+  popup_shape?: string;
+  popup_size?: string;
+  custom_width?: number;
+  custom_height?: number;
+  user_id: string;
 }
