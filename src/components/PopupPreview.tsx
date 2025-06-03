@@ -1,11 +1,9 @@
 import { useEffect, useState } from 'react';
-import { PopupPosition } from '@/lib/supabase';
+import { PopupPosition, PopupShape, PopupSize } from '@/lib/supabase/index';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
-// Import types from CreatePopupLink
-type PopupShape = 'rounded' | 'square' | 'pill' | 'circle';
-type PopupSize = 'small' | 'medium' | 'large' | 'custom';
+// Using types from Supabase implementation
 
 interface PopupPreviewProps {
   popupMessage: string;

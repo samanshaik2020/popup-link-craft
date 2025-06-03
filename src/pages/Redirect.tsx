@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { popupLinks } from '@/lib/supabase';
+import { popupLinks } from '@/lib/supabase/index';
 
 export default function Redirect() {
   const { shortCode } = useParams<{ shortCode: string }>();
@@ -26,8 +26,8 @@ export default function Redirect() {
         // Register the click
         await popupLinks.registerClick(shortCode);
         
-        // Redirect to the original URL
-        window.location.href = data.original_url;
+        // Redirect to the destination URL
+        window.location.href = data.destination_url;
       } catch (err: any) {
         setError(err.message || 'An error occurred');
       }

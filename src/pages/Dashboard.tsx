@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
-import { popupLinks, PopupPosition } from '@/lib/supabase';
+import { popupLinks, PopupPosition, PopupLink, PopupShape, PopupSize } from '@/lib/supabase/index';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -22,8 +22,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Copy, ExternalLink, Trash2, Edit, Save, X } from "lucide-react";
 import { PopupPreview } from '../components/PopupPreview';
 
-// Using the PopupLink type from supabase.ts
-import { PopupLink } from '@/lib/supabase';
+// PopupLink is already imported above
 
 type FormData = {
   destinationUrl: string;

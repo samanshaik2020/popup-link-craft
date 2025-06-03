@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { popupLinks, PopupPosition } from '@/lib/supabase';
+import { popupLinks, PopupPosition, PopupShape, PopupSize } from '@/lib/supabase/index';
 import { useAuth } from '@/contexts/AuthContext';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -14,11 +14,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Copy, ExternalLink, Trash2, Image as ImageIcon, X } from "lucide-react";
 import { PopupPreview } from '../components/PopupPreview';
 
-// Define popup shape options
-type PopupShape = 'rounded' | 'square' | 'pill' | 'circle';
-
-// Define popup size options
-type PopupSize = 'small' | 'medium' | 'large' | 'custom';
+// Using PopupShape and PopupSize from Supabase types
 
 type FormData = {
   destinationUrl: string;

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { popupLinks, PopupLink } from '@/lib/supabase';
+import { popupLinks, PopupLink } from '@/lib/supabase/index';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
